@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Admin Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="/static/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,7 +42,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item active" style="list-style:none">
                 <a class="nav-link" href="{% url 'dashboard:index' %}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -57,48 +57,62 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item" style="list-style:none">
             <a class="nav-link " href="{% url 'dashboard:companies-list' %}" 
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-list"></i>
                     <span>Company</span>
                 </a>
             </li>
-             <li class="nav-item">
+             <li class="nav-item" style="list-style:none">
                 <a class="nav-link " href="{% url 'dashboard:products-list' %}" 
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-list"></i>
                     <span>Product</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#" 
+            <li class="nav-item" style="list-style:none">
+                <a class="nav-link " href="{% url 'dashboard:orders-list' %}" 
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-list"></i>
                     <span>Order</span>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#" 
+            </li>  
+            <li class="nav-item" style="list-style:none">
+                <a class="nav-link " href="#" data-toggle="modal" data-target="#logoutModal"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-list"></i>
-                    <span>Company</span>
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Logout</span>
                 </a>
-            </li>
-
-           
+            </li>       
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+          
 
         </ul>
         <!-- End of Sidebar -->
 
+         <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="/dashboard/accounts/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -161,7 +175,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="#">Logout</a>
                 </div>
             </div>
         </div>

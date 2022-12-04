@@ -61,3 +61,28 @@ class ProductDeleteView(DeleteView):
 class ProductDetailView(DetailView):
     template_name = 'dashboard/products/form.html'
     model = Product
+
+#order view
+class OrderListView(ListView):
+    template_name = 'dashboard/orders/list.html'
+    model = Order
+
+
+class OrderCreateView(CreateView):
+    template_name = 'dashboard/orders/form.html'
+    form_class = OrderForm
+    success_url = reverse_lazy('dashboard:orders-list')
+
+class OrderUpdateView(UpdateView):
+    template_name = 'dashboard/orders/form.html'
+    form_class = OrderForm
+    model = Order
+    success_url = reverse_lazy('dashboard:orders-list')
+
+class OrderDeleteView(DeleteView):
+    model = Order
+    success_url = reverse_lazy('dashboard:orders-list')
+
+class OrderDetailView(DetailView):
+    template_name = 'dashboard/orders/form.html'
+    model = Order
